@@ -1,10 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../static/global.css" />
+        <link rel="stylesheet" href="../static/nav.css" />
+        <link rel="stylesheet" href="../static/edit-dutch.css" />
+        <script src="https://kit.fontawesome.com/261c90fc7c.js" crossorigin="anonymous"></script>
+        <title>edit Dutch | GoDutch</title>
+    </head>
+    <body>
+        <div class="nav">
+            <a href="/">
+                <span>GoDutch</span>
+            </a>
+        </div>
+        <div class="edit__wrapper__body">
+            <div class="edit__body">
+                <div class="edit__wrapper__LR">
+                    <div class="edit__body__left">
+                        <div class="edit__body__left__top">
+                            <div class="edit__wrapper__input">
+                                <div class="edit__wrap__input__span">
+                                    <span>Topic</span>
+                                </div>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <button class="edit__add__btn">Add Member</button>
 
-</body>
+                        </div>
+                        <div class="edit__body__left__bottom">
+                            <div class="edit__wrapper__input">
+                                <div class="edit__wrap__input__span">
+                                    <span>Item</span>
+                                </div>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <div class="edit__wrapper__input">
+                                <div class="edit__wrap__input__span">
+                                    <span>Price</span>
+                                </div>
+                                <input type="text" name="" id="" />
+                            </div>
+                            <button class="edit__add__btn">Add Item</button>
+                        </div>
+                    </div>
+                    <div class="edit__body__right">
+                        <div class="edit__body__right__header">Item List</div>
+                        <div class="edit__item__list">
+                            <span>เบียร์</span>
+                            <span>2,000</span>
+                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                        <div class="edit__item__list">
+                            <span>กะหรี่</span>
+                            <span>200,000</span>
+                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                    </div>
+                    <div class="edit__body__right">
+                        <div class="edit__body__right__header">Member List</div>
+                        <div class="edit__item__list">
+                            <span>Wave</span>
+                            <span class="edit__item">กะหรี่</span>
+                            <span class="edit__item">เบียร์</span>
+                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                        <div class="edit__item__list">
+                            <span>Wave</span>
+                            <span class="edit__item">กะหรี่</span>
+                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit__body__bottom">
+                    <button class="edit__save__btn">Save</button>
+                    <button class="edit__cal__btn">Calculate</button>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
