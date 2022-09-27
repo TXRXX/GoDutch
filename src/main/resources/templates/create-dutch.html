@@ -2,10 +2,25 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}" />
-        <link rel="stylesheet" href="../static/css/nav.css" th:href="@{/css/nav.css}" />
-        <link rel="stylesheet" href="../static/css/create-dutch.css" th:href="@{/css/create-dutch.css}" />
-        <script src="https://kit.fontawesome.com/261c90fc7c.js" crossorigin="anonymous"></script>
+        <link
+            rel="stylesheet"
+            href="../static/css/global.css"
+            th:href="@{/css/global.css}"
+        />
+        <link
+            rel="stylesheet"
+            href="../static/css/nav.css"
+            th:href="@{/css/nav.css}"
+        />
+        <link
+            rel="stylesheet"
+            href="../static/css/create-dutch.css"
+            th:href="@{/css/create-dutch.css}"
+        />
+        <script
+            src="https://kit.fontawesome.com/261c90fc7c.js"
+            crossorigin="anonymous"
+        ></script>
         <title>Create Dutch | GoDutch</title>
     </head>
     <body>
@@ -16,49 +31,77 @@
         </div>
         <div class="create__wrapper__body">
             <div class="create__body">
-                <div class="create__wrapper__LR">
-                    <div class="create__body__left">
-                        <div class="create__body__left__top">
-                            <div class="create__wrapper__input">
-                                <div class="create__wrap__input__span">
-                                    <span>Topic</span>
+
+                <!-- Main Form -->
+                <form action=""> 
+                    <div class="create__wrapper__LR">
+                        <div class="create__body__left">
+                            <div class="create__body__left__top">
+                                <div class="create__wrapper__input">
+                                    <div class="create__wrap__input__span">
+                                        <span>Topic</span>
+                                    </div>
+                                    <input
+                                        type="text"
+                                        name="dutchName"
+                                        id="dutchName"
+                                    />
                                 </div>
-                                <input type="text" name="" id="" />
                             </div>
+
+                            <!-- Itemlist Form -->
+                            <form action="">
+                                <div class="create__body__left__bottom">
+                                    <div class="create__wrapper__input">
+                                        <div class="create__wrap__input__span">
+                                            <span>Item</span>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="itemName"
+                                            id="itemName"
+                                        />
+                                    </div>
+                                    <div class="create__wrapper__input">
+                                        <div class="create__wrap__input__span">
+                                            <span>Price</span>
+                                        </div>
+                                        <input
+                                            type="text"
+                                            name="itemPrice"
+                                            id="itemPrice"
+                                        />
+                                    </div>
+                                    <button class="create__add__btn">
+                                        Add Item
+                                    </button>
+                                </div>
+                            </form>
                         </div>
-                        <div class="create__body__left__bottom">
-                            <div class="create__wrapper__input">
-                                <div class="create__wrap__input__span">
-                                    <span>Item</span>
-                                </div>
-                                <input type="text" name="" id="" />
+                        <div class="create__body__right">
+                            <div class="create__body__right__header">
+                                Item List
                             </div>
-                            <div class="create__wrapper__input">
-                                <div class="create__wrap__input__span">
-                                    <span>Price</span>
-                                </div>
-                                <input type="text" name="" id="" />
+                            <div class="create__item__list">
+                                <span>เบียร์</span>
+                                <span>2,000</span>
+                                <span class="create__remove__btn"
+                                    ><i class="fa-solid fa-trash"></i
+                                ></span>
                             </div>
-                            <button class="create__add__btn">Add Item</button>
+                            <div class="create__item__list">
+                                <span>กะหรี่</span>
+                                <span>200,000</span>
+                                <span class="create__remove__btn"
+                                    ><i class="fa-solid fa-trash"></i
+                                ></span>
+                            </div>
                         </div>
                     </div>
-                    <div class="create__body__right">
-                        <div class="create__body__right__header">Item List</div>
-                        <div class="create__item__list">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                            <span class="create__remove__btn"><i class="fa-solid fa-trash"></i></span>
-                        </div>
-                        <div class="create__item__list">
-                            <span>กะหรี่</span>
-                            <span>200,000</span>
-                            <span class="create__remove__btn"><i class="fa-solid fa-trash"></i></span>
-                        </div>
+                    <div class="create__body__bottom">
+                        <button class="create__create__btn">CREATE</button>
                     </div>
-                </div>
-                <div class="create__body__bottom">
-                    <button class="create__create__btn" >CREATE</button>
-                </div>
+                </form>
             </div>
         </div>
     </body>
