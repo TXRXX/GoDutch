@@ -17,15 +17,19 @@ public class DutchController {
     private DutchRepository repository;
 
     @RequestMapping("/create-dutch")
-    public String showDutch() {return "create-dutch";}
+    public String showDutch() {
+        System.out.println("Kuy1");
+        return "create-dutch";
+    }
 
 //    method save data to database (create)
     @PostMapping("/create-dutch")
     public String addDutch(@Validated Dutch dutch, BindingResult result){
-        if(result.hasErrors()){
-            return "create-dutch";
-        }
-        repository.save(dutch);
+        System.out.println("Kuy");
+//        if(result.hasErrors()){
+//            return "create-dutch";
+//        }
+//        repository.save(dutch);
         return "redirect:/";
     }
 
