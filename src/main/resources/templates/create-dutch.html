@@ -33,7 +33,7 @@
             <div class="create__body">
 
                 <!-- Main Form -->
-                <form action="create-dutch"  method="post">
+                <form action="#" th:action="@{/create-dutch}" method="post">
                     <div class="create__wrapper__LR">
                         <div class="create__body__left">
                             <div class="create__body__left__top">
@@ -49,8 +49,6 @@
                                 </div>
                             </div>
 
-                            <!-- Itemlist Form -->
-                            <form action="">
                                 <div class="create__body__left__bottom">
                                     <div class="create__wrapper__input">
                                         <div class="create__wrap__input__span">
@@ -76,7 +74,6 @@
                                         Add Item
                                     </button>
                                 </div>
-                            </form>
                         </div>
                         <div class="create__body__right">
                             <div class="create__body__right__header">
@@ -99,7 +96,7 @@
                         </div>
                     </div>
                     <div class="create__body__bottom">
-                        <button class="create__create__btn">CREATE</button>
+                        <button class="create__create__btn" type="submit">CREATE</button>
                     </div>
                 </form>
             </div>
