@@ -2,19 +2,21 @@ package com.godutch.godutch.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
 @Data
 @AllArgsConstructor
 public class Item {
-    private String Item_name;
+    @Id
+    private String item_name;
     private double price;
 
     public String getItem_name() {
-        return Item_name;
+        return item_name;
     }
 
     public void setItem_name(String item_name) {
-        Item_name = item_name;
+        item_name = item_name;
     }
 
     public double getPrice() {
