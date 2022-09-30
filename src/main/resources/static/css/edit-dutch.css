@@ -69,6 +69,11 @@ body {
     border-bottom: 1px solid #CDD9ED;
 }
 
+.edit__wrapper__input input:disabled {
+    color: #393c3e;
+    background-color: #e1e5ec;
+}
+
 .edit__body__left__top {
     margin-bottom: 50px;
 }

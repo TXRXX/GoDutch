@@ -21,9 +21,9 @@
                         <div class="edit__body__left__top">
                             <div class="edit__wrapper__input">
                                 <div class="edit__wrap__input__span">
-                                    <span th:text="${dutch.topic}"></span>
+                                    <span>TOPIC</span>
                                 </div>
-                                <input type="text" name="" id="" />
+                                <input type="text" th:placeholder="${dutch.topic}" disabled="true"/>
                             </div>
                             <button class="edit__add__btn">Add Member</button>
 
@@ -33,27 +33,22 @@
                                 <div class="edit__wrap__input__span">
                                     <span>Item</span>
                                 </div>
-                                <input type="text" name="" id="" />
+                                <input type="text" name=""/>
                             </div>
                             <div class="edit__wrapper__input">
                                 <div class="edit__wrap__input__span">
                                     <span>Price</span>
                                 </div>
-                                <input type="text" name="" id="" />
+                                <input type="text" name=""/>
                             </div>
                             <button class="edit__add__btn">Add Item</button>
                         </div>
                     </div>
                     <div class="edit__body__right">
                         <div class="edit__body__right__header">Item List</div>
-                        <div class="edit__item__list">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
-                        </div>
-                        <div class="edit__item__list">
-                            <span>กะหรี่</span>
-                            <span>200,000</span>
+                        <div class="edit__item__list" th:each="item : ${dutch.itemList}">
+                            <span th:text="${item.item_name}"></span>
+                            <span th:text="${item.price}"></span>
                             <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
                         </div>
                     </div>
