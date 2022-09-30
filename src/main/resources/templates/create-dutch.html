@@ -81,16 +81,9 @@
                 <div class="create__body__right__header">
                     Item List
                 </div>
-                <div class="create__item__list">
-                    <span>เบียร์</span>
-                    <span>2,000</span>
-                    <span class="create__remove__btn"
-                    ><i class="fa-solid fa-trash"></i
-                    ></span>
-                </div>
-                <div class="create__item__list">
-                    <span>กะหรี่</span>
-                    <span>200,000</span>
+                <div class="create__item__list" th:each="itemkub : ${itemList}">
+                    <span th:text="${itemkub.item_name}"></span>
+                    <span th:text="${itemkub.price}"></span>
                     <span class="create__remove__btn"
                     ><i class="fa-solid fa-trash"></i
                     ></span>

@@ -21,21 +21,21 @@ public class DutchController {
     private DutchRepository DutchRepo;
 
 
-    @GetMapping("/dutch") // ส่ง list Dutch ออกไป
-    public List<Dutch> getDutch(){
-        return DutchRepo.findAll();
-    }
+//    @GetMapping("/dutch") // ส่ง list Dutch ออกไป
+//    public List<Dutch> getDutch(){
+//        return DutchRepo.findAll();
+//    }
 
 
 //    method save data to database (create)
-    @PostMapping("/create-dutch")
-    public String addDutch(@Validated Dutch dutch, BindingResult result){
-        if(result.hasErrors()){
-            return "create-dutch";
-        }
-        DutchRepo.save(dutch);
-        return "redirect:/";
-    }
-
+//    @PostMapping("/create-dutch")
+//    public String addDutch(@Validated Dutch dutch, BindingResult result){
+//        if(result.hasErrors()){
+//            return "";
+//        }
+//        DutchRepo.save(dutch);
+//        return "redirect:/";
+//    }
+//
 
 }
