@@ -38,16 +38,7 @@
         <div class="create__wrapper__LR">
             <div class="create__body__left">
                 <div class="create__body__left__top">
-                    <div class="create__wrapper__input">
-                        <div class="create__wrap__input__span">
-                            <span>Topic</span>
-                        </div>
-                        <input
-                                type="text"
-                                name="topic"
-                                id="topic"
-                        />
-                    </div>
+
                 </div>
                 <form action="#" th:action="@{/add-Item}" method="post" th:object="${item}">
                     <div class="create__body__left__bottom">
@@ -91,7 +82,19 @@
             </div>
         </div>
         <div class="create__body__bottom">
-            <a class="create__create__btn" type="submit" th:href="@{/add-dutch}"  >CREATE</a>
+            <form action="#" th:action="@{/add-dutch}" method="post" th:object="${dutch}">
+                <div class="create__wrapper__input">
+                    <div class="create__wrap__input__span">
+                        <span>Topic</span>
+                    </div>
+                    <input
+                            type="text"
+                            name="topic"
+                            id="topic"
+                    />
+                </div>
+                <button class="create__create__btn" type="submit"  >CREATE</button>
+            </form>
         </div>
     </div>
 </div>

@@ -16,6 +16,7 @@ public class DutchController {
     @Autowired
     private DutchRepository DutchRepo;
 
+
     @Autowired
     private ItemRepository ItemRepo;
     @Autowired
@@ -23,7 +24,7 @@ public class DutchController {
 
 
 //    method save data to database (create)
-    @GetMapping("/add-dutch")
+    @PostMapping("/add-dutch")
     public String addDutch(@Validated Dutch dutch, BindingResult result, Model model){
         if(result.hasErrors()){
             return "create-dutch";

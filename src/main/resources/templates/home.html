@@ -31,19 +31,9 @@
                         <span>YOUR LIST</span>
                     </div>
                     <table>
-                        <tr>
+                        <tr th:each="dutchList : ${dutchList}">
                             <td>
-                                <a href="/"> ไร่ต้องมนต์</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="/"> New York Trip </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <a href="/"> Big Moutain Festival </a>
+                                <a th:href="@{/}" th:text="${dutchList.topic}"></a>
                             </td>
                         </tr>
                     </table>
