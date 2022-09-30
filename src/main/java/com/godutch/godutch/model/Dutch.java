@@ -1,31 +1,32 @@
 package com.godutch.godutch.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Document
+@AllArgsConstructor
+@NoArgsConstructor
 public class Dutch {
+
+    @Transient
+    public static final String SEQUENCE_NAME="user_sequence";
     @Id
-    private String id;
+    private int id;
     private String topic;
     private List<Item> itemList = new ArrayList<>();
 
-    public Dutch(String id, String topic, List<Item> itemList) {
-        this.id = id;
-        this.topic = topic;
-        this.itemList = itemList;
-    }
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
