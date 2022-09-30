@@ -41,6 +41,8 @@ public class Dutch {
         return itemList;
     }
 
+    public void addItem(Item item){this.itemList.add(item);}
+
     public void setItemList(List<Item> itemList) {
         this.itemList = itemList;
     }

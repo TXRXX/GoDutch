@@ -47,4 +47,13 @@ public class DutchController {
         model.addAttribute("dutch",dutch);
         return "edit-dutch";
     }
+
+    //function go to page add-member
+    @GetMapping("/edit-member/{id}")
+    public String editMember(@PathVariable("id") int id,Model model){
+        Dutch dutch = DutchRepo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
+        model.addAttribute("dutch",dutch);
+        return "add-member";
+    }
 }

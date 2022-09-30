@@ -1,7 +1,9 @@
 package com.godutch.godutch.Controller;
 
+import com.godutch.godutch.Repository.DutchRepository;
 import com.godutch.godutch.Repository.ItemRepository;
 import com.godutch.godutch.Service.SequenceGeneratorService;
+import com.godutch.godutch.model.Dutch;
 import com.godutch.godutch.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +19,8 @@ import java.util.List;
 
 @Controller
 public class ItemController {
+    @Autowired
+    private DutchRepository DutchRepo;
     @Autowired
     private ItemRepository itemRepo;
     @Autowired
@@ -46,5 +50,17 @@ public class ItemController {
         Item item = itemRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
         itemRepo.delete(item);
         return "redirect:/create-dutch";
+    }
+
+    //function update item in edit-dutch
+    @PostMapping("/update-item-dutch/{id}")
+    public String updateItem(@PathVariable("id") int id, @Validated Dutch dutch,BindingResult result, Model model){
+        System.out.println(id);
+        if(result.hasErrors()){
+            dutch.setId(id);
+            return "edit-dutch";
+        }
+//        DutchRepo.save(dutch);
+        return "redirect:/edit-dutch/{id}";
     }
 }

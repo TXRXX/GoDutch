@@ -25,23 +25,25 @@
                                 </div>
                                 <input type="text" th:placeholder="${dutch.topic}" disabled="true"/>
                             </div>
-                            <button class="edit__add__btn">Add Member</button>
+                            <a class="edit__add__btn" th:href="@{/edit-member/{id}(id=${dutch.id})}">Add Member</a>
 
                         </div>
                         <div class="edit__body__left__bottom">
+                            <form action="#" th:action="@{/update-item-dutch/{id}(id=${dutch.id})}" method="post" th:object="${dutch.itemList}">
                             <div class="edit__wrapper__input">
                                 <div class="edit__wrap__input__span">
                                     <span>Item</span>
                                 </div>
-                                <input type="text" name=""/>
+                                <input type="text" name="item_name"/>
                             </div>
                             <div class="edit__wrapper__input">
                                 <div class="edit__wrap__input__span">
                                     <span>Price</span>
                                 </div>
-                                <input type="text" name=""/>
+                                <input type="text" name="price"/>
                             </div>
                             <button class="edit__add__btn">Add Item</button>
+                            </form>
                         </div>
                     </div>
                     <div class="edit__body__right">
