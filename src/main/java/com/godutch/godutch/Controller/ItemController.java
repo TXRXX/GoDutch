@@ -41,10 +41,10 @@ public class ItemController {
         itemRepo.save(item);
         return  "redirect:/create-dutch";
     }
-    @GetMapping("/delete_item/{item_name}")
-    public String deleteItem(@PathVariable("item_name") long id, Model model){
-        //Item item = itemRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
-        //itemRepo.delete(item);
+    @GetMapping("/delete_item/{id}")
+    public String deleteItem(@PathVariable("id") long id, Model model){
+        Item item = itemRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
+        itemRepo.delete(item);
         return "redirect:/create-dutch";
     }
 }
