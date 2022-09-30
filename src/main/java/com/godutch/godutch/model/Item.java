@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 @Data
 @AllArgsConstructor
 public class Item {
-//    @Id
+    @Id
     private String item_name;
     private double price;
 
