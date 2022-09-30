@@ -1,6 +1,7 @@
 package com.godutch.godutch.Controller;
 
 import com.godutch.godutch.Repository.ItemRepository;
+import com.godutch.godutch.Service.SequenceGeneratorService;
 import com.godutch.godutch.model.Item;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +19,8 @@ import java.util.List;
 public class ItemController {
     @Autowired
     private ItemRepository itemRepo;
+    @Autowired
+    private SequenceGeneratorService service;
 
     @RequestMapping("/create-dutch") //function show list item in create-dutch
     public String getItemList(Model model){
@@ -33,17 +36,15 @@ public class ItemController {
         if(result.hasErrors()){
             return "create-dutch";
         }
+        //generate sequence
+       item.setId(service.getSequenceNumber(Item.SEQUENCE_NAME));
         itemRepo.save(item);
         return  "redirect:/create-dutch";
     }
-
-//    @GetMapping("/delete/{id}")
-//    public String deleteItem(@PathVariable("id") String id, Model model) {
-//        Item Item = itemRepo.findById("id")
-//                .orElseThrow(() -> new IllegalArgumentException("Invalid Employee Id:" + id));
-//        itemRepo.delete(Item);
-//        return "redirect:/";
-//    }
-
-
+    @GetMapping("/delete_item/{item_name}")
+    public String deleteItem(@PathVariable("item_name") long id, Model model){
+        //Item item = itemRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
+        //itemRepo.delete(item);
+        return "redirect:/create-dutch";
+    }
 }

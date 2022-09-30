@@ -43,8 +43,8 @@
                         </div>
                         <input
                                 type="text"
-                                name="dutchName"
-                                id="dutchName"
+                                name="topic"
+                                id="topic"
 
                         />
                     </div>
@@ -81,9 +81,9 @@
                 <div class="create__body__right__header">
                     Item List
                 </div>
-                <div class="create__item__list" th:each="itemkub : ${itemList}">
-                    <span th:text="${itemkub.item_name}"></span>
-                    <span th:text="${itemkub.price}"></span>
+                <div class="create__item__list" th:each="itemList : ${itemList}">
+                    <span th:text="${itemList.item_name}"></span>
+                    <span th:text="${itemList.price}"></span>
                     <span class="create__remove__btn"
                     ><i class="fa-solid fa-trash"></i
                     ></span>

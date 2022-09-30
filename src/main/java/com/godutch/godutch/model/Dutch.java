@@ -13,6 +13,13 @@ public class Dutch {
     @Id
     private String id;
     private String topic;
+    private List<Item> itemList = new ArrayList<>();
+
+    public Dutch(String id, String topic, List<Item> itemList) {
+        this.id = id;
+        this.topic = topic;
+        this.itemList = itemList;
+    }
 
     public String getId() {
         return id;
@@ -30,18 +37,11 @@ public class Dutch {
         this.topic = topic;
     }
 
-    public List<Item> getItem() {
-        return item;
+    public List<Item> getItemList() {
+        return itemList;
     }
 
-    public void setItem(List<Item> item) {
-        this.item = item;
-    }
-
-    private List<Item> item;
-
-    public Dutch(String topic, List<Item> item) {
-        this.topic = topic;
-        this.item = item;
+    public void setItemList(List<Item> itemList) {
+        this.itemList = itemList;
     }
 }

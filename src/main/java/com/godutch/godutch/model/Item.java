@@ -2,12 +2,23 @@ package com.godutch.godutch.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Generated;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Item {
+
+    @Transient
+    public static final String SEQUENCE_NAME="user_sequence";
+
     @Id
+    @Generated
+    private int id;
     private String item_name;
     private double price;
 
@@ -16,7 +27,7 @@ public class Item {
     }
 
     public void setItem_name(String item_name) {
-        item_name = item_name;
+        this.item_name = item_name;
     }
 
     public double getPrice() {
