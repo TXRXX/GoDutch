@@ -31,9 +31,9 @@
                         <span>YOUR LIST</span>
                     </div>
                     <table>
-                        <tr th:each="dutchList : ${dutchList}">
+                        <tr th:each="dutch : ${dutchList}">
                             <td>
-                                <a th:href="@{/}" th:text="${dutchList.topic}"></a>
+                                <a th:href="@{/edit-dutch/{id}(id=${dutch.id})}" th:text="${dutch.topic}"></a>
                             </td>
                         </tr>
                     </table>
