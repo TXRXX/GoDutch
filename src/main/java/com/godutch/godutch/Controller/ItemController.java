@@ -32,13 +32,13 @@ public class ItemController {
 
     @PostMapping("/add-Item") //function add item to database item
     public String addItem(@Validated Item item, BindingResult result, Model model){
-        System.out.println("Add Item");
         if(result.hasErrors()){
             return "create-dutch";
         }
         //generate sequence
        item.setId(service.getSequenceNumber(Item.SEQUENCE_NAME));
         itemRepo.save(item);
+        System.out.println("Add Item");
         return  "redirect:/create-dutch";
     }
     @GetMapping("/delete_item/{id}")
