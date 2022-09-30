@@ -13,6 +13,31 @@ public class Dutch {
     @Id
     private String id;
     private String topic;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getTopic() {
+        return topic;
+    }
+
+    public void setTopic(String topic) {
+        this.topic = topic;
+    }
+
+    public List<Item> getItem() {
+        return item;
+    }
+
+    public void setItem(List<Item> item) {
+        this.item = item;
+    }
+
     private List<Item> item;
 
     public Dutch(String topic, List<Item> item) {

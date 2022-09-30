@@ -1,105 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <link
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8"/>
+    <link
             rel="stylesheet"
             href="../static/css/global.css"
             th:href="@{/css/global.css}"
-        />
-        <link
+    />
+    <link
             rel="stylesheet"
             href="../static/css/nav.css"
             th:href="@{/css/nav.css}"
-        />
-        <link
+    />
+    <link
             rel="stylesheet"
             href="../static/css/create-dutch.css"
             th:href="@{/css/create-dutch.css}"
-        />
-        <script
+    />
+    <script
             src="https://kit.fontawesome.com/261c90fc7c.js"
             crossorigin="anonymous"
-        ></script>
-        <title>Create Dutch | GoDutch</title>
-    </head>
-    <body>
-        <div class="nav">
-            <a href="/">
-                <span>GoDutch</span>
-            </a>
-        </div>
-        <div class="create__wrapper__body">
-            <div class="create__body">
+    ></script>
+    <title>Create Dutch | GoDutch</title>
+</head>
+<body>
+<div class="nav">
+    <a href="/">
+        <span>GoDutch</span>
+    </a>
+</div>
+<div class="create__wrapper__body">
+    <div class="create__body">
 
-                <!-- Main Form -->
-                <form action="#" th:action="@{/create-dutch}" method="post">
-                    <div class="create__wrapper__LR">
-                        <div class="create__body__left">
-                            <div class="create__body__left__top">
-                                <div class="create__wrapper__input">
-                                    <div class="create__wrap__input__span">
-                                        <span>Topic</span>
-                                    </div>
-                                    <input
-                                        type="text"
-                                        name="dutchName"
-                                        id="dutchName"
-                                    />
-                                </div>
-                            </div>
+        <!-- Main Form -->
 
-                                <div class="create__body__left__bottom">
-                                    <div class="create__wrapper__input">
-                                        <div class="create__wrap__input__span">
-                                            <span>Item</span>
-                                        </div>
-                                        <input
-                                            type="text"
-                                            name="itemName"
-                                            id="itemName"
-                                        />
-                                    </div>
-                                    <div class="create__wrapper__input">
-                                        <div class="create__wrap__input__span">
-                                            <span>Price</span>
-                                        </div>
-                                        <input
-                                            type="text"
-                                            name="itemPrice"
-                                            id="itemPrice"
-                                        />
-                                    </div>
-                                    <button class="create__add__btn">
-                                        Add Item
-                                    </button>
-                                </div>
+        <div class="create__wrapper__LR">
+            <div class="create__body__left">
+                <div class="create__body__left__top">
+                    <div class="create__wrapper__input">
+                        <div class="create__wrap__input__span">
+                            <span>Topic</span>
                         </div>
-                        <div class="create__body__right">
-                            <div class="create__body__right__header">
-                                Item List
-                            </div>
-                            <div class="create__item__list">
-                                <span>เบียร์</span>
-                                <span>2,000</span>
-                                <span class="create__remove__btn"
-                                    ><i class="fa-solid fa-trash"></i
-                                ></span>
-                            </div>
-                            <div class="create__item__list">
-                                <span>กะหรี่</span>
-                                <span>200,000</span>
-                                <span class="create__remove__btn"
-                                    ><i class="fa-solid fa-trash"></i
-                                ></span>
-                            </div>
-                        </div>
+                        <input
+                                type="text"
+                                name="dutchName"
+                                id="dutchName"
+
+                        />
                     </div>
-                    <div class="create__body__bottom">
-                        <button class="create__create__btn" type="submit">CREATE</button>
+                </div>
+                <form action="#" th:action="@{/add-Item}" method="post" th:object="${item}">
+                    <div class="create__body__left__bottom">
+                        <div class="create__wrapper__input">
+                            <div class="create__wrap__input__span">
+                                <span>Item</span>
+                            </div>
+                            <input
+                                    type="text"
+                                    id="Item_name"
+                                    name="Item_name"
+                            />
+                        </div>
+                        <div class="create__wrapper__input">
+                            <div class="create__wrap__input__span">
+                                <span>Price</span>
+                            </div>
+                            <input
+                                    type="text"
+                                    id="price"
+                                    name="price"
+                            />
+                        </div>
+                        <button class="create__add__btn" type="submit">
+                            Add Item
+                        </button>
                     </div>
                 </form>
             </div>
+            <div class="create__body__right">
+                <div class="create__body__right__header">
+                    Item List
+                </div>
+                <div class="create__item__list">
+                    <span>เบียร์</span>
+                    <span>2,000</span>
+                    <span class="create__remove__btn"
+                    ><i class="fa-solid fa-trash"></i
+                    ></span>
+                </div>
+                <div class="create__item__list">
+                    <span>กะหรี่</span>
+                    <span>200,000</span>
+                    <span class="create__remove__btn"
+                    ><i class="fa-solid fa-trash"></i
+                    ></span>
+                </div>
+            </div>
         </div>
-    </body>
+        <div class="create__body__bottom">
+            <button class="create__create__btn" type="submit">CREATE</button>
+        </div>
+    </div>
+</div>
+</body>
 </html>
