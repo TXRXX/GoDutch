@@ -46,4 +46,11 @@ public class Dutch {
     public void setItemList(List<Item> itemList) {
         this.itemList = itemList;
     }
+
+    public String toString(){
+        for(int i=0;i<itemList.size();i++){
+            System.out.println(itemList.get(i));
+        }
+        return "id : "+ getId()+ ", topic : "+getTopic();
+    }
 }

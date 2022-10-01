@@ -54,13 +54,18 @@ public class ItemController {
 
     //function update item in edit-dutch
     @PostMapping("/update-item-dutch/{id}")
-    public String updateItem(@PathVariable("id") int id, @Validated Dutch dutch,BindingResult result, Model model){
-        System.out.println(id);
+    public String updateItem(@PathVariable("id") int id, @Validated Dutch dutch,@Validated Item item,BindingResult result, Model model){
+//        System.out.println(id);
         if(result.hasErrors()){
             dutch.setId(id);
             return "edit-dutch";
         }
-//        DutchRepo.save(dutch);
+        item.setId(service.getSequenceNumber(Item.SEQUENCE_NAME));
+        Dutch dutch1 = DutchRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
+        dutch1.addItem(item);
+//        System.out.println(dutch1);
+       DutchRepo.save(dutch1);
+       System.out.println("update dutch id: "+id);
         return "redirect:/edit-dutch/{id}";
     }
 }
