@@ -49,9 +49,9 @@
                     <div class="edit__body__right">
                         <div class="edit__body__right__header">Item List</div>
                         <div class="edit__item__list" th:each="item : ${dutch.itemList}">
-                            <span th:text="${item.item_name}"></span>
-                            <span th:text="${item.price}"></span>
-                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
+                            <span th:text="${item.item_name}" th:value="${item.item_name}" name="itemName" ></span>
+                            <span th:text="${item.price}" ></span>
+                            <a class="edit__remove__btn" th:href="@{/delete_item-dutch/{id}/{ItemId}(id=${dutch.id}, ItemId=${item.id})}"  ><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
                     <div class="edit__body__right">
