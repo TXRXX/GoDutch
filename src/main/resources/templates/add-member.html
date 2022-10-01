@@ -21,9 +21,9 @@
                         <div class="add__body__left__top">
                             <div class="add__wrapper__input">
                                 <div class="add__wrap__input__span">
-                                    <span>Topic</span>
+                                    <span>Title</span>
                                 </div>
-                                <input type="text" name="" id="" />
+                                <input type="text"  name="" id="" th:placeholder="${dutch.topic}" disabled="true"/>
                             </div>
                         </div>
                         <div class="add__body__left__bottom">
@@ -34,15 +34,10 @@
                                 <input type="text" name="" id="" />
                             </div>
                             <div class="add__wrap__check">
-                                <div class="check__list">
-                                    <input type="checkbox">
-                                    <label for="">กะหรี่</label>
+                                <div class="check__list" th:each="item : ${dutch.itemList}">
+                                    <input type="checkbox" th:value="${item.item_name}">
+                                    <label th:text="${item.item_name}"></label>
                                 </div>
-                                <div class="check__list">
-                                    <input type="checkbox">
-                                    <label for="">เบียร์</label>
-                                </div>
-
                             </div>
                             <button class="add__add__btn">Add Member</button>
                         </div>

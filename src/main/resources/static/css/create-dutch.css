@@ -42,6 +42,13 @@ body {
     margin: 10px 0;
 }
 
+.wrap__form {
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+    height: 40px;
+}
+
 .create__wrap__input__span {
     display: flex;
     align-items: center;
