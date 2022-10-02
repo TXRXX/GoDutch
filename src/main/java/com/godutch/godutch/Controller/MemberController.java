@@ -63,4 +63,22 @@ public class MemberController {
         memberRepo.deleteAll();
         return "redirect:/edit-dutch/{id}";
     }
+
+    //function delete Member in edit-dutch by id
+    @GetMapping("/delete_member-dutch/{id}/{memberId}")
+    public String deleteMemberInDutch(@PathVariable("id") int id, @PathVariable("memberId") int memberId){
+        Dutch dutch = DutchRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
+        List<Member> memberList = dutch.getMember();
+        Member member = new Member();
+        for(int i=0; i<memberList.size();i++){
+            member = memberList.get(i);
+            if(member.getId()==memberId){
+                memberList.remove(member);
+                dutch.setMember(memberList);
+                DutchRepo.save(dutch);
+                return "redirect:/edit-dutch/{id}";
+            }
+        }
+        return "redirect:/edit-dutch/{id}";
+    }
 }
