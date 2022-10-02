@@ -15,7 +15,7 @@ import java.util.List;
 public class Dutch {
 
     @Transient
-    public static final String SEQUENCE_NAME="user_sequence";
+    public static final String SEQUENCE_NAME="dutchID";
     @Id
     private int id;
     private String topic;

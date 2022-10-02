@@ -14,7 +14,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Item {
 
     @Transient
-    public static final String SEQUENCE_NAME="user_sequence";
+    public static final String SEQUENCE_NAME="itemId";
 
     @Id
     @Generated
