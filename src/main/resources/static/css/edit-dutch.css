@@ -76,6 +76,10 @@ body {
     background-color: #e1e5ec;
 }
 
+.edit__wrapper__input input::placeholder {
+    font-size: 14px;
+}
+
 .edit__body__left__top {
     margin-bottom: 50px;
 }
@@ -107,6 +111,12 @@ body {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    opacity: .4;
+    transition: .3s;
+}
+
+.edit__remove__btn:hover {
+    opacity: 1;
 }
 
 .edit__body__right__header {
@@ -128,7 +138,7 @@ body {
     margin-top: 200px;
 }
 
-.edit__save__btn, .edit__cal__btn {
+.edit__back__btn, .edit__cal__btn {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -143,8 +153,14 @@ body {
     font-size: 16px;
 }
 
-.edit__save__btn {
-    background-color: #c7c7c7 !important;
+.edit__back__btn {
+    background-color: #dedede;
+    transition: .2s;
+}
+
+.edit__save__btn:hover {
+    cursor: pointer;
+    background-color: red;
 }
 
 .edit__edit__btn:hover, .edit__cal__btn:hover {
@@ -163,4 +179,24 @@ body {
     bottom: 10px;
     transform: translateX(-50%);
     font-size: 14px;
+}
+
+.add__sign {
+    font-weight: 300;
+}
+
+.add__sign::before {
+    content: "฿";
+    margin-right: 5px;
+}
+
+.back__btn {
+    padding: 3px 8px;
+    transition: .2s;
+    border-radius: 8px;
+}
+
+.back__btn:hover {
+    cursor: pointer;
+    background-color: #dedede;
 }

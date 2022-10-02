@@ -31,10 +31,10 @@
                         <span>YOUR LIST</span>
                     </div>
                     <table>
-                        <tr th:each="dutch : ${dutchList}">
-                            <td>
-                                <a th:href="@{/edit-dutch/{id}(id=${dutch.id})}" th:text="${dutch.topic}"></a>
-                            </td>
+                        <tr th:each="dutch : ${dutchList}" class="home__tr">
+                                <td>
+                                    <a class="home__dutch__item" th:href="@{/edit-dutch/{id}(id=${dutch.id})}" th:text="${dutch.topic}"></a>
+                                </td>
                         </tr>
                     </table>
                 </div>

@@ -16,6 +16,8 @@
         </div>
         <div class="edit__wrapper__body">
             <div class="edit__body">
+                <div><a class="back__btn" href="/"><i class="fa-solid fa-angle-left"></i> BACK</a></div>
+
                 <div class="edit__wrapper__LR">
                     <div class="edit__body__left">
                         <div class="edit__body__left__top">
@@ -41,7 +43,7 @@
                                 </div>
                                 <input type="text" name="price"/>
                             </div>
-                            <button class="edit__add__btn">Add Item</button>
+                            <button class="edit__add__btn"><i class="fa-solid fa-circle-plus" style="margin-right: 5px"></i>Add Item</button>
                             </form>
                         </div>
                     </div>
@@ -49,7 +51,7 @@
                         <div class="edit__body__right__header">Item List</div>
                         <div class="edit__item__list" th:each="item : ${dutch.itemList}">
                             <span th:text="${item.item_name}" th:value="${item.item_name}" name="itemName" ></span>
-                            <span th:text="${item.price}" ></span>
+                            <span th:text="${item.price}" class="add__sign" ></span>
                             <a class="edit__remove__btn" th:href="@{/delete_item-dutch/{id}/{ItemId}(id=${dutch.id}, ItemId=${item.id})}"  ><i class="fa-solid fa-trash"></i></a>
                         </div>
                     </div>
@@ -62,11 +64,10 @@
                             </div>
                             <a class="edit__remove__btn" th:href="@{/delete_member-dutch/{id}/{memberId}(id=${dutch.id}, memberId=${member.id})}"><i class="fa-solid fa-trash"></i></a>
                         </div>
-                        <a class="edit__add__btn add__member__btn" th:href="@{/edit-member/{id}(id=${dutch.id})}">Add Member</a>
+                        <a class="edit__add__btn add__member__btn" th:href="@{/edit-member/{id}(id=${dutch.id})}"><i class="fa-solid fa-user" style="margin-right: 5px"></i>Manage Member</a>
                     </div>
                 </div>
                 <div class="edit__body__bottom">
-                    <a class="edit__save__btn" href="/"><span>Back</span></a>
                     <button class="edit__cal__btn">Calculate</button>
                 </div>
             </div>

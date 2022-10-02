@@ -141,3 +141,14 @@ body {
     cursor: pointer;
     background-color: #a9d371;
 }
+
+.back__btn {
+    padding: 3px 8px;
+    transition: .2s;
+    border-radius: 8px;
+}
+
+.back__btn:hover {
+    cursor: pointer;
+    background-color: #dedede;
+}

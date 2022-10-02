@@ -49,13 +49,32 @@ body {
 }
 
 .home__dutch__list table {
+    width: 100%;
     padding: 15px;
+}
+
+.home__tr {
+    width: 100%;
 }
 
 .home__dutch__list td {
     font-weight: 300;
-    padding-left: 30px;
-    padding-top: 5px;
+    margin-left: 30px;
+    padding: 3px 10px;
+    border-radius: 10px;
+}
+
+.home__dutch__list td a {
+    display: flex;
+}
+
+.home__dutch__list td a::before {
+    content: "- ";
+    margin-right: 5px;
+}
+
+.home__dutch__list td:hover {
+    background-color: #dedede;
 }
 
 .home__wrapper__create {
