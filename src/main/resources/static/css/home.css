@@ -99,3 +99,30 @@ body {
     cursor: pointer;
     background-color: #a9d371;
 }
+
+#loading {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-color: #F5F9FF;
+    animation: FadeIn 1.3s;
+}
+
+#loading span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+    font-size: 60px;
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
