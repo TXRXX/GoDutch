@@ -21,6 +21,16 @@ public class Dutch {
     private String topic;
     private List<Item> itemList = new ArrayList<>();
 
+    private List<Member> member = new ArrayList<>();
+
+    public List<Member> getMember() {
+        return member;
+    }
+
+    public void setMember(List<Member> member) {
+        this.member = member;
+    }
+
     public int getId() {
         return id;
     }

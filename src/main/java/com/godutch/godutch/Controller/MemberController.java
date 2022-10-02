@@ -53,4 +53,13 @@ public class MemberController {
         return "redirect:/edit-member/{id}";
     }
 
+    //function save member to Dutch by id
+    @GetMapping("/save-member{id}")
+    public String saveMember(@PathVariable("id") int id){
+        Dutch dutch = DutchRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
+        System.out.println(dutch.getId());
+        dutch.setMember(memberRepo.findAll());
+        DutchRepo.save(dutch);
+        return "redirect:/edit-dutch/{id}";
+    }
 }
