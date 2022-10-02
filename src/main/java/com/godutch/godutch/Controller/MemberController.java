@@ -81,4 +81,9 @@ public class MemberController {
         }
         return "redirect:/edit-dutch/{id}";
     }
+    //function back to edit-dutch
+    @GetMapping("/back-edit-dutch/{id}")
+    public String backToEditDutch(){
+        return "redirect:/edit-dutch/{id}";
+    }
 }
