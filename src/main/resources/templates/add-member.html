@@ -27,32 +27,30 @@
                             </div>
                         </div>
                         <div class="add__body__left__bottom">
+                            <form action="#" th:action="@{/add-member{id}(id=${dutch.id})}" method="post">
                             <div class="add__wrapper__input">
                                 <div class="add__wrap__input__span">
                                     <span>Member</span>
                                 </div>
-                                <input type="text" name="" id="" />
+                                <input type="text" name="name" />
                             </div>
                             <div class="add__wrap__check">
                                 <div class="check__list" th:each="item : ${dutch.itemList}">
-                                    <input type="checkbox" th:value="${item.item_name}">
+                                    <input type="checkbox" name="item" th:value="${item.item_name}">
                                     <label th:text="${item.item_name}"></label>
                                 </div>
                             </div>
                             <button class="add__add__btn">Add Member</button>
+                            </form>
                         </div>
                     </div>
                     <div class="add__body__right">
                         <div class="add__body__right__header">Member List</div>
-                        <div class="add__item__list">
-                            <span>Save</span>
-                            <span class="edit__item">กะหรี่</span>
-                            <span class="edit__item">เบียร์</span>
-                            <span class="add__remove__btn"><i class="fa-solid fa-trash"></i></span>
-                        </div>
-                        <div class="add__item__list">
-                            <span>Wave</span>
-                            <span class="edit__item">กะหรี่</span>
+                        <div class="add__item__list" th:each=" member : ${memberList}">
+                            <span  th:text="${member.name}" ></span>
+                            <div th:each=" eat : ${member.itemEat}">
+                                <span class="edit__item" th:text="${eat}"></span>
+                            </div>
                             <span class="add__remove__btn"><i class="fa-solid fa-trash"></i></span>
                         </div>
                     </div>

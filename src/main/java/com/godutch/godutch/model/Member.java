@@ -1,0 +1,48 @@
+package com.godutch.godutch.model;
+
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.annotation.Transient;
+
+import java.util.ArrayList;
+import java.util.List;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Member {
+
+    @Transient
+    public static final String SEQUENCE_NAME="memberID";
+    @Id
+    private int id;
+    private String name;
+    private List<String> itemEat = new ArrayList<>();
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<String> getItemEat() {
+        return itemEat;
+    }
+
+    public void setItemEat(List<String> itemEat) {
+        this.itemEat = itemEat;
+    }
+}

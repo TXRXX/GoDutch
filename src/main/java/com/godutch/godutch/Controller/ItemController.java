@@ -12,7 +12,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
+
 import java.util.List;
 
 @Controller
@@ -26,7 +26,7 @@ public class ItemController {
 
     @RequestMapping("/create-dutch") //function show list item in create-dutch
     public String getItemList(Model model){
-        System.out.println("Test in ItemList");
+//        System.out.println("Test in ItemList");
         List<Item> itemList = itemRepo.findAll();
         model.addAttribute("itemList",itemList);
         return "create-dutch";
@@ -40,7 +40,7 @@ public class ItemController {
         //generate sequence
        item.setId(service.getSequenceNumber(Item.SEQUENCE_NAME));
         itemRepo.save(item);
-        System.out.println("Add Item");
+//        System.out.println("Add Item");
         return  "redirect:/create-dutch";
     }
     @GetMapping("/delete_item/{id}")
@@ -63,7 +63,7 @@ public class ItemController {
         dutch1.addItem(item);
 //        System.out.println(dutch1);
        DutchRepo.save(dutch1);
-       System.out.println("update dutch id: "+id);
+//       System.out.println("update dutch id: "+id);
         return "redirect:/edit-dutch/{id}";
     }
 

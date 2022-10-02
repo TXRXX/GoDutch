@@ -11,7 +11,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Optional;
+import java.util.List;
+
 
 @Controller
 public class DutchController {
@@ -25,6 +26,14 @@ public class DutchController {
     private SequenceGeneratorService service;
 
 
+    //show home Index
+    @RequestMapping("/")
+    public String showIndex(Model model) {
+        List<Dutch> dutchList = DutchRepo.findAll();
+        model.addAttribute("dutchList",dutchList);
+        return "home";
+    }
+
 //    method save data to database and Delete all Item in database
     @PostMapping("/add-dutch")
     public String addDutch(@Validated Dutch dutch, BindingResult result, Model model){
@@ -34,7 +43,7 @@ public class DutchController {
         dutch.setId(service.getSequenceNumber(Dutch.SEQUENCE_NAME));
         dutch.setItemList(ItemRepo.findAll());
         DutchRepo.save(dutch);
-        System.out.println("Add dutch");
+//        System.out.println("Add dutch");
         ItemRepo.deleteAll();
         return "redirect:/";
     }
@@ -48,12 +57,4 @@ public class DutchController {
         return "edit-dutch";
     }
 
-    //function go to page add-member
-    @GetMapping("/edit-member/{id}")
-    public String editMember(@PathVariable("id") int id,Model model){
-        Dutch dutch = DutchRepo.findById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
-        model.addAttribute("dutch",dutch);
-        return "add-member";
-    }
 }
