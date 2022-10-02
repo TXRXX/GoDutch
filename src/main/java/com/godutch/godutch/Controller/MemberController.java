@@ -60,6 +60,7 @@ public class MemberController {
         System.out.println(dutch.getId());
         dutch.setMember(memberRepo.findAll());
         DutchRepo.save(dutch);
+        memberRepo.deleteAll();
         return "redirect:/edit-dutch/{id}";
     }
 }

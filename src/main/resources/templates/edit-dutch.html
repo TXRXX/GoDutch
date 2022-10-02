@@ -25,7 +25,6 @@
                                 </div>
                                 <input type="text" th:placeholder="${dutch.topic}" disabled="true"/>
                             </div>
-                            <a class="edit__add__btn" th:href="@{/edit-member/{id}(id=${dutch.id})}">Add Member</a>
 
                         </div>
                         <div class="edit__body__left__bottom">
@@ -56,21 +55,18 @@
                     </div>
                     <div class="edit__body__right">
                         <div class="edit__body__right__header">Member List</div>
-                        <div class="edit__item__list">
-                            <span>Wave</span>
-                            <span class="edit__item">กะหรี่</span>
-                            <span class="edit__item">เบียร์</span>
+                        <div class="edit__item__list" th:each="member : ${dutch.member}">
+                            <span th:text="${member.name}"></span>
+                            <div th:each=" eat : ${member.itemEat}">
+                                <span class="edit__item" th:text="${eat}"></span>
+                            </div>
                             <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
                         </div>
-                        <div class="edit__item__list">
-                            <span>Wave</span>
-                            <span class="edit__item">กะหรี่</span>
-                            <span class="edit__remove__btn"><i class="fa-solid fa-trash"></i></span>
-                        </div>
+                        <a class="edit__add__btn add__member__btn" th:href="@{/edit-member/{id}(id=${dutch.id})}">Add Member</a>
                     </div>
                 </div>
                 <div class="edit__body__bottom">
-                    <button class="edit__save__btn">Save</button>
+                    <a class="edit__save__btn" href="/"><span>Back</span></a>
                     <button class="edit__cal__btn">Calculate</button>
                 </div>
             </div>
