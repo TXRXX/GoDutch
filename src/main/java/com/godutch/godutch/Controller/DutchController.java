@@ -57,4 +57,12 @@ public class DutchController {
         return "edit-dutch";
     }
 
+    //function go to calculator
+    @GetMapping("/receipt/{id}")
+    public String calculate(@PathVariable("id") int id, Model model) {
+        Dutch dutch = DutchRepo.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
+        model.addAttribute("dutch",dutch);
+        return "receipt";
+    }
 }
