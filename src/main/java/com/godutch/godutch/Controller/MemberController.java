@@ -57,7 +57,7 @@ public class MemberController {
     @GetMapping("/save-member{id}")
     public String saveMember(@PathVariable("id") int id){
         Dutch dutch = DutchRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
-        System.out.println(dutch.getId());
+//        System.out.println(dutch.getId());
         dutch.setMember(memberRepo.findAll());
         DutchRepo.save(dutch);
         memberRepo.deleteAll();

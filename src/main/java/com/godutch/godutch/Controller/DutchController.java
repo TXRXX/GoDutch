@@ -4,6 +4,7 @@ import com.godutch.godutch.Repository.DutchRepository;
 import com.godutch.godutch.Repository.ItemRepository;
 import com.godutch.godutch.Service.SequenceGeneratorService;
 import com.godutch.godutch.model.Dutch;
+import com.godutch.godutch.model.Receipt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -62,6 +63,8 @@ public class DutchController {
     public String calculate(@PathVariable("id") int id, Model model) {
         Dutch dutch = DutchRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
+        Receipt receipt = new Receipt(dutch);
+        receipt.calPrice();
         model.addAttribute("dutch",dutch);
         return "receipt";
     }
