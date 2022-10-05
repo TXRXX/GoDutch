@@ -22,6 +22,16 @@ public class Member {
     private String name;
     private List<String> itemEat = new ArrayList<>();
 
+    private double price; // เก็บจำนวนเงินที่ member ต้องจ่ายแต่ละคน
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }

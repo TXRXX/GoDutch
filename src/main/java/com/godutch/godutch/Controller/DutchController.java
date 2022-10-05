@@ -31,7 +31,7 @@ public class DutchController {
     @RequestMapping("/")
     public String showIndex(Model model) {
         List<Dutch> dutchList = DutchRepo.findAll();
-        model.addAttribute("dutchList",dutchList);
+        model.addAttribute("dutchList",dutchList); //send api dutchList
         return "home";
     }
 
@@ -54,7 +54,7 @@ public class DutchController {
     public String editDutch(@PathVariable("id") int id,Model model){
         Dutch dutch = DutchRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
-        model.addAttribute("dutch",dutch);
+        model.addAttribute("dutch",dutch); //send api dutch
         return "edit-dutch";
     }
 
@@ -63,9 +63,10 @@ public class DutchController {
     public String calculate(@PathVariable("id") int id, Model model) {
         Dutch dutch = DutchRepo.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
-        Receipt receipt = new Receipt(dutch);
-        receipt.calPrice();
-        model.addAttribute("dutch",dutch);
+        Receipt receipt = new Receipt(dutch); //create object Receipt
+        receipt.calculate();
+        model.addAttribute("dutch",dutch); //send api dutch
+        model.addAttribute("receipt",receipt); //send api receipt
         return "receipt";
     }
 }
