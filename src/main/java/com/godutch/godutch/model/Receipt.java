@@ -9,6 +9,7 @@ public class Receipt {
     private  HashMap<String,Double> priceShare; //เก็บ HashMap ราคา Item ที่หารออกมา
     private List<Member> memberList; // เก็บ List<Member> ที่คำนวณ price ที่แต่ละคนต้องจ่ายออกมา
 
+
     private Double totalPrice; // เก็บ จำนวนเงินทั้งหมดที่ต้องจ่าย
 
     //constructor
@@ -16,6 +17,13 @@ public class Receipt {
         this.dutch = dutch;
     }
 
+    public Double getTotalPrice() {
+        return totalPrice;
+    }
+
+    public Double getPriceShare(String item){
+        return priceShare.get(item);
+    }
     public Dutch getDutch() {
         return dutch;
     }
