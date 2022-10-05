@@ -19,80 +19,19 @@
                     <span>RECEIPT</span>
                 </div>
                 <div class="receipt__container__body">
-                    <div class="receipt__list">
-                        <span class="receipt__member">Wave</span>
-                        <div class="receipt__item">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__total">
-                            <span>TOTAL</span>
-                            <span>2,000</span>
-                        </div>
+                    <div class="receipt__wrap__topic__price">
+                        <span th:text="${dutch.getTopic()}" ></span>
+                        <span >8,000.0</span>
                     </div>
-                    <div class="receipt__list">
-                        <span class="receipt__member">Wave</span>
-                        <div class="receipt__item">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
+                    <div class="receipt__list" th:each="member : ${receipt.memberList}">
+                        <span class="receipt__member" th:text="${member.getName()}"></span>
+                        <div class="receipt__item" th:each="item : ${member.getItemEat()}">
+                            <span th:text="${item}"></span>
+                            <span >100**</span>
                         </div>
                         <div class="receipt__total">
                             <span>TOTAL</span>
-                            <span>2,000</span>
-                        </div>
-                    </div>
-                    <div class="receipt__list">
-                        <span class="receipt__member">Wave</span>
-                        <div class="receipt__item">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__total">
-                            <span>TOTAL</span>
-                            <span>2,000</span>
-                        </div>
-                    </div>
-                    <div class="receipt__list">
-                        <span class="receipt__member">Wave</span>
-                        <div class="receipt__item">
-                            <span>เบียร์</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__item">
-                            <span>กะหรี่</span>
-                            <span>2,000</span>
-                        </div>
-                        <div class="receipt__total">
-                            <span>TOTAL</span>
-                            <span>2,000</span>
+                            <span th:text="${member.getPrice()}"></span>
                         </div>
                     </div>
                 </div>

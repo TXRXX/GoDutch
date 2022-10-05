@@ -106,7 +106,7 @@ body {
     height: 100vh;
     position: relative;
     background-color: #F5F9FF;
-    animation: FadeIn 1.3s;
+    animation: FadeIn 1.8s;
 }
 
 #loading span {

@@ -70,3 +70,17 @@ body {
     cursor: pointer;
     background-color: #a9d371;
 }
+
+.receipt__wrap__topic__price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #e5e5e5;
+    border-radius: 7px;
+    padding: 2px 5px;
+    margin-bottom: 15px;
+}
+
+.receipt__wrap__topic__price:first-child::before {
+    content: "TOTAL OF ";
+}
