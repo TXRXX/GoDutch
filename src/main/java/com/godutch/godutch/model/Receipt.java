@@ -133,16 +133,16 @@ public class Receipt {
         setTotalPrice(); //call method setTotalPrice();
         calPrice(); //cal method calPrice()
         List<Member> members = dutch.getMember();
-        System.out.println("total price : " +totalPrice);
+//        System.out.println("total price : " +totalPrice);
         for(Member m : members){
             double total = 0.0;
-            System.out.println("Member Name: " + m.getName());
+//            System.out.println("Member Name: " + m.getName());
             for(String s : m.getItemEat()){
-                System.out.println("\t"+s +" \t "+ priceShare.get(s));
+//                System.out.println("\t"+s +" \t "+ priceShare.get(s));
                 total = total + priceShare.get(s);
             }
             m.setPrice(total);
-            System.out.println("total : "+m.getPrice());
+//            System.out.println("total : "+m.getPrice());
         }
         this.memberList = members;
     }

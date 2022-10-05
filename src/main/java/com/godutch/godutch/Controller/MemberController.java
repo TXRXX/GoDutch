@@ -4,12 +4,10 @@ import com.godutch.godutch.Repository.DutchRepository;
 import com.godutch.godutch.Repository.MemberRepository;
 import com.godutch.godutch.Service.SequenceGeneratorService;
 import com.godutch.godutch.model.Dutch;
-import com.godutch.godutch.model.Item;
 import com.godutch.godutch.model.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,6 +24,10 @@ public class MemberController {
     private SequenceGeneratorService service;
 
     //function show to page add-member{id}
+    /*ใช้เปิดหน้า add-member เพื่อเพิ่ม member ลงในฐานข้อมูล (collection member)
+    * ส่ง api ข้อมูล Dutch ผ่าน id
+    * ค้นหา Member ทั้งหมดใน ฐานข้อมูล(collection member) เพื่อส่ง api ไปหน้า add-member.html ให้แสดงข้อมูล member ทั้งหมด
+    * */
     @GetMapping("/edit-member/{id}")
     public String editMember(@PathVariable("id") int id, Model model){
         Dutch dutch = DutchRepo.findById(id)
@@ -35,7 +37,9 @@ public class MemberController {
         model.addAttribute("memberList",memberList);
         return "add-member";
     }
+
     //function add member to database
+    /*เพื่ม member ลงในฐานข้อมูล (collection member)*/
     @PostMapping("/add-member{id}")
     public String addMember(@RequestParam(name="item") List<String> item, @RequestParam(name="name") String name){
         Member member = new Member();
@@ -46,6 +50,7 @@ public class MemberController {
         return "redirect:/edit-member/{id}";
     }
     //function delete member by id
+    /*ลบ member ในฐานข้อมูล (collection member) ผ่าน id*/
     @GetMapping("/delete_member{id}/{memberId}")
     public String deleteItem(@PathVariable("memberId") int memberId,Model model){
         Member member = memberRepo.findById(memberId).orElseThrow(() -> new IllegalArgumentException("Invalid member id"+memberId));
@@ -54,6 +59,10 @@ public class MemberController {
     }
 
     //function save member to Dutch by id
+    /*เมื่อกด save ในหน้า add member จะข้อมูล member ทั้งหมดในฐานข้อมูล (collection member)
+    * ไปใส่ใน Dutch ผ่าน id ลงในฐานข้อมูล (collection dutch)
+    * จากนั้นลบข้อมูลทั้งหมดในฐานข้อมูล (collection member) และกลับไปยัง edit-dutch.html ผ่าน id
+    */
     @GetMapping("/save-member{id}")
     public String saveMember(@PathVariable("id") int id){
         Dutch dutch = DutchRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid dutch id: "+ id));
@@ -65,6 +74,7 @@ public class MemberController {
     }
 
     //function delete Member in edit-dutch by id
+    /*ลบข้อมูล member ในหน้า edit-dutch*/
     @GetMapping("/delete_member-dutch/{id}/{memberId}")
     public String deleteMemberInDutch(@PathVariable("id") int id, @PathVariable("memberId") int memberId){
         Dutch dutch = DutchRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
@@ -81,7 +91,7 @@ public class MemberController {
         }
         return "redirect:/edit-dutch/{id}";
     }
-    //function back to edit-dutch
+    //function back to edit-dutch ย้อนกลับไปหน้า edit-dutch.html
     @GetMapping("/back-edit-dutch/{id}")
     public String backToEditDutch(){
         return "redirect:/edit-dutch/{id}";

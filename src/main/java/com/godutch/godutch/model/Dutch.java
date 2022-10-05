@@ -58,8 +58,8 @@ public class Dutch {
     }
 
     public String toString(){
-        for(int i=0;i<itemList.size();i++){
-            System.out.println(itemList.get(i));
+        for (Item item : itemList) {
+            System.out.println(item);
         }
         return "id : "+ getId()+ ", topic : "+getTopic();
     }
