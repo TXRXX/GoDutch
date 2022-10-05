@@ -107,6 +107,15 @@ body {
     transform: translateY(-50%);
 }
 
+.add__remove__btn i {
+    transition: .3s;
+    opacity: .4;
+}
+
+.add__remove__btn i:hover {
+    opacity: 1;
+}
+
 .add__body__right__header {
     display: flex;
     align-items: center;
