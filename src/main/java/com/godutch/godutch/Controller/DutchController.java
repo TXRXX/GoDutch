@@ -57,6 +57,13 @@ public class DutchController {
         ItemRepo.deleteAll();
         return "redirect:/";
     }
+    //function delete dutch ใช้ลบ dutch ในฐานข้อมูล (collection dutch) ผ่าน id
+    @GetMapping("/delete-dutch/{id}")
+    public String deleteDutch(@PathVariable int id){
+        Dutch dutch = DutchRepo.findById((int) id).orElseThrow(() -> new IllegalArgumentException("Invalid item id"+id));
+        DutchRepo.delete(dutch);
+        return "redirect:/";
+    }
 
     //function to show EditDutch by id
     /*
