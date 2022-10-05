@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="../static/css/nav.css" th:href="@{/css/nav.css}" />
         <link rel="stylesheet" href="../static/css/edit-dutch.css" th:href="@{/css/edit-dutch.css}" />
         <script src="https://kit.fontawesome.com/261c90fc7c.js" crossorigin="anonymous"></script>
+        <script type="text/javascript" th:src="@{/js/edit-dutch.js}"></script>
         <title>Edit Dutch | GoDutch</title>
     </head>
     <body>
@@ -41,7 +42,7 @@
                                 <div class="edit__wrap__input__span">
                                     <span>Price</span>
                                 </div>
-                                <input type="text" name="price"/>
+                                <input type="text" name="price" onkeypress='validate(event)'/>
                             </div>
                             <button class="edit__add__btn"><i class="fa-solid fa-circle-plus" style="margin-right: 5px"></i>Add Item</button>
                             </form>

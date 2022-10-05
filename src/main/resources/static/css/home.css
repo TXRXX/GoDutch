@@ -69,7 +69,6 @@ body {
 }
 
 .home__dutch__list td a::before {
-    content: "- ";
     margin-right: 5px;
 }
 
@@ -106,7 +105,7 @@ body {
     height: 100vh;
     position: relative;
     background-color: #F5F9FF;
-    animation: FadeIn 1.8s;
+    animation: FadeIn 1.6s;
 }
 
 #loading span {
@@ -116,6 +115,23 @@ body {
     transform: translate(-50%, -50%);
     font-weight: 500;
     font-size: 60px;
+}
+
+.home__td {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.home__td a i {
+    opacity: .4;
+    transition: .3s;
+}
+
+.home__td a i:hover {
+    opacity: 1;
+    cursor: pointer;
 }
 
 @keyframes FadeIn {

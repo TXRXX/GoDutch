@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="../static/css/nav.css" th:href="@{/css/nav.css}" />
         <link rel="stylesheet" href="../static/css/global.css" th:href="@{/css/global.css}" />
         <script src="https://kit.fontawesome.com/261c90fc7c.js" crossorigin="anonymous"></script>
-        <script type="text/javascript" th:src="@{/js/create-dutch.js}"></script>
+        <script type="text/javascript" th:src="@{/js/home.js}"></script>
         <title>GoDutch</title>
     </head>
     <body>
@@ -36,8 +36,9 @@
                     </div>
                     <table>
                         <tr th:each="dutch : ${dutchList}" class="home__tr">
-                                <td>
+                                <td class="home__td">
                                     <a class="home__dutch__item" th:href="@{/edit-dutch/{id}(id=${dutch.id})}" th:text="${dutch.topic}"></a>
+                                    <a th:href="@{/delete-dutch/{id}(id=${dutch.id})}"><i class="fa-solid fa-trash"></i></a>
                                 </td>
                         </tr>
                     </table>
