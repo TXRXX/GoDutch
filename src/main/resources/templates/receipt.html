@@ -26,12 +26,19 @@
                     <div class="receipt__list" th:each="member : ${receipt.memberList}">
                         <span class="receipt__member" th:text="${member.getName()}"></span>
                         <div class="receipt__item" th:each="item : ${member.getItemEat()}">
-                            <span th:text="${item}"></span>
-                            <span th:text="${receipt.getPriceShare(item)}"></span>
+                            <span
+                                    th:text="${item}"
+                            ></span>
+                            <span
+                                  th:text="${#numbers.formatDecimal(receipt.getPriceShare(item), 0, 'COMMA', 2, 'POINT')}"
+                            ></span>
                         </div>
                         <div class="receipt__total">
                             <span>TOTAL</span>
-                            <span th:text="${member.getPrice()}"></span>
+                            <span
+                                    class="wow"
+                                  th:text="${#numbers.formatDecimal(member.getPrice(), 0, 'COMMA', 2, 'POINT')}"
+                            ></span>
                         </div>
                     </div>
                 </div>
