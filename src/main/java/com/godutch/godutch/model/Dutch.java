@@ -10,11 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
+//Generates constructors
 @AllArgsConstructor
 @NoArgsConstructor
 public class Dutch {
 
-    @Transient
+    @Transient //มันมีไว้สำหรับกำหนด field นั้นๆใน java class ให้กับ Hibernate รู้ว่าไม่ต้องสร้าง column นั้นใน table
     public static final String SEQUENCE_NAME="dutchID";
     @Id
     private int id;

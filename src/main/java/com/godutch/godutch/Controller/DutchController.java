@@ -18,6 +18,8 @@ import java.util.List;
 @Controller
 public class DutchController {
     @Autowired
+    //เป็น annotation ที่ทำให้เราสามารถ 'Inject' object ขึ้นมาใช้งานได้ โดย object ดังกล่าวจะต้องถูกประกาศไว้ก่อนหน้า
+    //และเป็น object ที่มีความเป็น Spring หรือมีชื่ออย่างเป็นทางการว่า "Spring Bean"
     private DutchRepository DutchRepo;
 
 

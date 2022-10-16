@@ -9,11 +9,12 @@ import org.springframework.data.annotation.Transient;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
+//Generates constructors
 @AllArgsConstructor
 @NoArgsConstructor
 public class Item {
 
-    @Transient
+    @Transient //มันมีไว้สำหรับกำหนด field นั้นๆใน java class ให้กับ Hibernate รู้ว่าไม่ต้องสร้าง column นั้นใน table
     public static final String SEQUENCE_NAME="itemId";
 
     @Id
